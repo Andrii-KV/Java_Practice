@@ -1,25 +1,58 @@
+import HomeWork.Fighter;
+
 import java.util.Arrays;
 import java.util.stream.IntStream;
 
 public class Test {
+
+
+
     public static void main(String[] args) {
 
-        Person a = new Person();
+        Pet pet = new Pet();
+        pet.setName("bob");
+
+        Staff a = new Staff();
         a.setName("Andrii");
         a.setAge(28);
         a.setSex('M');
+        a.setSalary(1000000);
 
-        Person b = new Person();
+        Staff b = new Staff();
         b.setName("Anna");
         b.setAge(30);
-        a.setSex('F');
+        b.setSex('F');
+        b.setPet(pet);
+        b.setSalary(100000);
 
-        System.out.println(a.getName());
-        System.out.println(a.getAge());
-        System.out.println(b.getName());
-        System.out.println(b.getAge());
+        b.setPerson(a);
+        a.setPerson(b);
+
+
+
+
+        Person[] people = {a, b};
+
+        System.out.println(b.getPet().getName());
+        PersonHelper personHelper = new PersonHelper();
+        personHelper.printPerson(people);
+        System.out.println(PersonHelper.getAvgAge(people));
+
+        System.out.println(PersonHelper.DEFAULT_NAME);
+
+
+
+
+
+
+
+
+
+
 
     }
+
+
 
     }
 

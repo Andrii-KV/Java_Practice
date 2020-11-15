@@ -1,25 +1,11 @@
-import java.lang.ref.SoftReference;
+package HomeWork;
 
 public class Person {
-    Pet pet;
-
-    Person person;
-
     String name;
     int age;
-
     char sex;
 
-
-
-
-
-
-
-
-
-
-    String getName(){
+    public String getName() {
         if (sex == 'M'){
             return "Mr. " + name;
         } else {
@@ -27,8 +13,7 @@ public class Person {
         }
     }
 
-    void setName(String name){
-
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -46,21 +31,5 @@ public class Person {
 
     public void setSex(char sex) {
         this.sex = sex;
-    }
-
-    public Person getPerson() {
-        return person;
-    }
-
-    public void setPerson(Person person) {
-        this.person = person;
-    }
-
-    public Pet getPet() {
-        return pet;
-    }
-
-    public void setPet(Pet pet) {
-        this.pet = pet;
     }
 }

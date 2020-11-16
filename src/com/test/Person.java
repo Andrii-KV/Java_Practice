@@ -1,30 +1,43 @@
-import java.lang.ref.SoftReference;
+package com.test;
 
 public class Person {
     Pet pet;
 
     Person person;
 
-    String name;
-    int age;
+    private String name;
+    private int age;
 
-    char sex;
+    private char sex;
 
+    public Person(){
+    }
 
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
 
-
-
-
-
-
-
-
-    String getName(){
+    private String getNameWithPrefix(){
         if (sex == 'M'){
             return "Mr. " + name;
         } else {
             return "Mrs. " + name;
         }
+    }
+
+    protected  String getBaseName(){
+        return name;
+    }
+
+    public Person(String name, int age, char sex) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+    }
+
+    public String getName(){
+        return getNameWithPrefix();
     }
 
     void setName(String name){
